@@ -1,0 +1,8 @@
+---
+Role: |
+  Sandbox\Project Sandbox Content Author
+MemberOf:
+  Role: |
+    sitecore\Author
+  Role: |
+    sitecore\Designer
