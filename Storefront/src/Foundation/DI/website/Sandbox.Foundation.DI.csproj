@@ -32,4 +32,7 @@
     <PackageReference Include="Sitecore.Kernel" Version="9.3.0" />
     <PackageReference Include="Sitecore.Mvc" Version="9.3.0" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\website\Sandbox.Foundation.Core.csproj" />
+  </ItemGroup>
 </Project>
