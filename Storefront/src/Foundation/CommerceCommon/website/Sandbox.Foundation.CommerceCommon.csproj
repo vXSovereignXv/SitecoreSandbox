@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>Sandbox.Foundation.CommerceCommon</RootNamespace>
+    <AssemblyName>Sandbox.Foundation.CommerceCommon</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="App_Config\Include\Foundation\Sandbox.Foundation.CommerceCommon\Sandbox.Foundation.CommerceCommon.config" />
+    <Content Include="App_Config\Include\Foundation\Sandbox.Foundation.CommerceCommon\Sandbox.Foundation.CommerceCommon.Serialization.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Sitecore.Kernel" Version="9.3.0">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Sitecore.Mvc" Version="9.3.0">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Sitecore.XA.Foundation.Variants.Abstractions" Version="9.3.0" />
+  </ItemGroup>
+</Project>

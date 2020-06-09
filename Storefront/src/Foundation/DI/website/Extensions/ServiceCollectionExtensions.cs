@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 using Sandbox.Foundation.Core.Methods;
+using System.Web.Mvc;
 
 namespace Sandbox.Foundation.DI.Extensions
 {
@@ -18,7 +19,7 @@ namespace Sandbox.Foundation.DI.Extensions
 
         public static void AddMvcControllers(this IServiceCollection serviceCollection, params Assembly[] assemblies)
         {
-            var controllers = GetTypes.GetTypesImplementing<SitecoreController>(assemblies)
+            var controllers = GetTypes.GetTypesImplementing<Controller>(assemblies)
                 .Where(controller => controller.Name.EndsWith("Controller", StringComparison.Ordinal));
 
             foreach (var controller in controllers)

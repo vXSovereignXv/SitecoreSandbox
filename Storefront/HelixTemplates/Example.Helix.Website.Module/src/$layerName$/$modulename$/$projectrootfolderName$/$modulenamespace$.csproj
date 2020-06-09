@@ -5,8 +5,8 @@
     <AssemblyName>$moduleNamespace$</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Feature\$moduleNamespace$\$moduleNamespace$.config" />
-    <Content Include="App_Config\Include\Feature\$moduleNamespace$\$moduleNamespace$.Serialization.config" />
+    <Content Include="App_Config\Include\$layerName$\$moduleNamespace$\$moduleNamespace$.config" />
+    <Content Include="App_Config\Include\$layerName$\$moduleNamespace$\$moduleNamespace$.Serialization.config" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Sitecore.Kernel" Version="$sitecoreVersion$">
