@@ -1,0 +1,14 @@
+﻿---
+ID: "d7158214-7db6-4a38-badc-29515f436d69"
+Parent: "2303e121-c51e-4fad-a656-368d560d37a8"
+Template: "2303e121-c51e-4fad-a656-368d560d37a8"
+Path: /sitecore/templates/Feature/Sandbox Experience Accelerator/Catalog/Rendering Parameters/Product Images/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200609T170027Z

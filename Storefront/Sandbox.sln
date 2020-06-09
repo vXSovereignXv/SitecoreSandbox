@@ -43,6 +43,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{2635A0ED-6
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox.Foundation.Core", "src\Foundation\Core\website\Sandbox.Foundation.Core.csproj", "{22E83734-58B0-4F81-8784-4A9038AF2CD0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{46B85978-6F25-47B9-BA89-586CAF003A16}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox.Feature.Catalog", "src\Feature\Catalog\website\Sandbox.Feature.Catalog.csproj", "{D725D7FC-1C02-44AE-8658-4C1CECBF3753}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +81,10 @@ Global
 		{22E83734-58B0-4F81-8784-4A9038AF2CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22E83734-58B0-4F81-8784-4A9038AF2CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22E83734-58B0-4F81-8784-4A9038AF2CD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D725D7FC-1C02-44AE-8658-4C1CECBF3753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D725D7FC-1C02-44AE-8658-4C1CECBF3753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D725D7FC-1C02-44AE-8658-4C1CECBF3753}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D725D7FC-1C02-44AE-8658-4C1CECBF3753}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,6 +103,8 @@ Global
 		{2BECC48F-FAD8-4475-974D-E9C233EF1CDB} = {0CDDE7FA-204E-4BA1-9478-6EBD43385213}
 		{2635A0ED-64C4-43DB-9F99-5BC23788F360} = {C3F57797-2D54-4626-B842-51F30272E972}
 		{22E83734-58B0-4F81-8784-4A9038AF2CD0} = {2635A0ED-64C4-43DB-9F99-5BC23788F360}
+		{46B85978-6F25-47B9-BA89-586CAF003A16} = {60DA3F20-DEED-4580-AE38-A296D76ADE79}
+		{D725D7FC-1C02-44AE-8658-4C1CECBF3753} = {46B85978-6F25-47B9-BA89-586CAF003A16}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {845F548C-FD53-4C61-AB7F-953C2225A13B}

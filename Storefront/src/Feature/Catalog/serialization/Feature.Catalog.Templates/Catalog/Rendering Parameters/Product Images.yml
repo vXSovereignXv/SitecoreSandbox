@@ -1,0 +1,22 @@
+﻿---
+ID: "2303e121-c51e-4fad-a656-368d560d37a8"
+Parent: "53996b85-2af7-4b79-9eab-b9e9c67b25d6"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/Sandbox Experience Accelerator/Catalog/Rendering Parameters/Product Images
+DB: master
+SharedFields:
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Type: tree list
+  Value: "{776AA8A6-85AE-48F1-BB99-87817AC49452}"
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{D7158214-7DB6-4A38-BADC-29515F436D69}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200609T161459Z

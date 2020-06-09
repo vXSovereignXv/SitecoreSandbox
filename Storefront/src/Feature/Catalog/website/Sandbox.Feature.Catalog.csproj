@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>Sandbox.Feature.Catalog</RootNamespace>
+    <AssemblyName>Sandbox.Feature.Catalog</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="App_Config\Include\Feature\Sandbox.Feature.Catalog\Sandbox.Feature.Catalog.config" />
+    <Content Include="App_Config\Include\Feature\Sandbox.Feature.Catalog\Sandbox.Feature.Catalog.Serialization.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Sitecore.Kernel" Version="9.3.0">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Sitecore.Mvc" Version="9.3.0">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>
