@@ -104,6 +104,7 @@ namespace Sandbox.Feature.Catalog.Repositories
             {
                 Item productItem = currentCatalogItem;
                 itemRenderingModel = GetCatalogItemVariantsRenderingModel(visitorContext, productItem);
+                itemRenderingModel.Item = currentCatalogItem;
             }
             else
             {
@@ -113,6 +114,7 @@ namespace Sandbox.Feature.Catalog.Repositories
 
                 //Important: need to create a variant version of mock data rendering model
                 itemRenderingModel = CatalogItemVariantsRenderingModelMockData.InitializeMockData(model);
+                itemRenderingModel.Item = Context.Item; //Need a mock catalog item
             }
             return itemRenderingModel;
         }

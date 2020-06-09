@@ -7,10 +7,7 @@
 @using Sitecore.XA.Foundation.Variants.Abstractions.Fields
 
 @model Sandbox.Feature.Catalog.Models.CatalogItemVariantsRenderingModel
-@if (!Model.IsBundle)
-{
-    return;
-}
+
 <div @Html.Sxa().Component(Model.Rendering.RenderingCssClass ?? "cxa-productimages-component", Model.Attributes)>
     <div class="component-content">
         @if (Model.Item != null)
