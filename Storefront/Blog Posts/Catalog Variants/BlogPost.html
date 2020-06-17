@@ -1,0 +1,59 @@
+<h1><a id="Using_Rendering_Variants_with_Commerce_Renderings_0"></a>Using Rendering Variants with Commerce Renderings</h1>
+<p><strong>Time to Read:</strong> About 10-15 minutes<br>
+<strong>Intended for:</strong> Sitecore Commerce developers and Sitecore developers<br>
+<strong>Key takeaway:</strong> Most Commerce renderings don’t support rendering variants out of the box. This post outlines what you need to know to modify them to work with rendering variants.</p>
+<p>Unlike many of the SXA renderings, Commerce renderings don’t support rendering variants. There are however two exceptions. Those being Product Bundles and the Product Information Page Content variant. This doesn’t offer a lot of flexibility for multiple site instances, especially if each site wants a different look and feel for the product page. We ran into this problem with a recent client that needed the flexibility that rendering variants provided on product pages. In this post I’ll go over how we modified the Commerce Catalog renderings to work with rendering variants. Although I’ll be focusing on the Catalog renderings you’ll be able to use these details on the other Commerce renderings as well.</p>
+<h2><a id="Creating_new_rendering_models_8"></a>Creating new rendering models</h2>
+<p>For any rendering to work with rendering variants its rendering model needs to inherit <code>Sitecore.XA.Foundation.Variants.Abstractions.Models.VariantsRenderingModel</code>. This model includes the <code>VariantsFields</code> property which holds the variant definition configured in Sitecore. It’s possible you may be able to get by with just implementing this field on your rendering model and populating it yourself. However there are references to the <code>VariantsRenderingModel</code> in some of the field renders, so you may loose some functionality if we do it that way.</p>
+<p>What we need to do is update <code>Sitecore.Commerce.XA.Feature.Catalog.Models.CatalogItemRenderingModel</code> to inherit <code>VariantsRenderingModel</code>. Unfortunately it already inherits it’s own base class <code>BaseCommerceRenderingModel</code>. We’re going to have to recreate it and several other classes to get this to work. Here are the steps I took. You will need a decompiler like dotPeek to reimplement parts of the original Sitecore code.</p>
+<ol>
+<li>Reimplement <code>Sitecore.Commerce.XA.Foundation.Common.Models.BaseCommerceRenderingModel</code> as <code>BaseCommerceVariantsRenderingModel</code> inheriting <code>VariantsRenderingModel</code> instead</li>
+<li>Reimplement <code>Sitecore.Commerce.XA.Feature.Catalog.Models.CatalogItemRenderingModel</code> as <code>CatalogItemVariantsRenderingModel</code> inheriting the new <code>BaseCommerceVariantsRenderingModel</code> class.
+<blockquote>
+<p>Another option here is to use pass through properties to the original <code>CatalogItemRenderingModel</code> to make upgrading easier. I didn’t do that since we made significant updates to the product structure and needed to reimplement much of the model anyway</p>
+</blockquote>
+</li>
+<li>Update ModelProvider to resolve the new model. You will need to create a config patch for this. Example:</li>
+</ol>
+<pre><code><span>&lt;<span>commerce.XA</span>&gt;</span>
+    <span>&lt;<span>models</span>&gt;</span>
+    <span>&lt;<span>CatalogItemVariantsRenderingModel</span> <span>type</span>=<span>"Sandbox.Feature.Catalog.Models.CatalogItemVariantsRenderingModel, Sandbox.Feature.Catalog"</span> /&gt;</span>
+    <span>&lt;/<span>models</span>&gt;</span>
+<span>&lt;/<span>commerce.XA</span>&gt;</span>
+</code></pre>
+<h2><a id="Create_new_BaseCatalogRepository_26"></a>Create new BaseCatalogRepository</h2>
+<p>Now that we have a new rendering model that works with rendering variants, we need a new repository to populate it. Just like the model we’ll be using the existing repository as a starting point. We’ll be reimplementing <code>Sitecore.Commerce.XA.Foundation.Common.Repositories.BaseCommerceModelRepository</code> as <code>BaseCatalogVariantsRepository</code>. Much of the code will stay the same as the original, you’ll just need to make the following changes.</p>
+<ol>
+<li>Replace all occurrences of <code>BaseCommerceRenderingModel</code> with <code>BaseCommerceVariantsRenderingModel</code></li>
+<li>Replace all occurrences of <code>CatalogItemRenderingModel</code> with <code>CatalogItemVariantsRenderingModel</code></li>
+<li>Update the <code>CurrentCatalogItemRenderingModelKeyName</code> constant to a new value. This will prevent our updates from causing issues with the unmodified renderings</li>
+<li>You will need to provide a new mock data model that returns the new Rendering Model in the <code>GetProduct</code> method</li>
+<li>Ensure the rendering item <code>Item</code> and <code>PageItem</code> property are set to the current catalog item. This will allow catalog fields to be used in the rendering variant</li>
+</ol>
+<h2><a id="Rendering_the_view_36"></a>Rendering the view</h2>
+<p>Now that we have our new base classes in place we need to update the catalog renderings to use them. For this I’ll use the Product Images rendering as an example. First we’ll need to reimplement the <code>ProductImagesRepository</code> to return our new model. This is pretty easy since it just makes a call to <code>GetProduct</code> in the base repository. All we need to do is ensure that it inherits the <code>BaseCatalogVariantsRepository</code> we just created and a method that returns a <code>CatalogItemVariantsRenderingModel</code> via the <code>GetProduct</code> method from the base class.</p>
+<p>Now we need a new controller action for the rendering to hit and a new cshtml view to render. All it needs to do is call the new <code>ProductImagesRepository</code>.</p>
+<pre><code class="language-C#">public ActionResult ProductImages()
+{
+    return View(GetRenderingView(nameof(ProductImages)), productImagesRepository.GetProductImagesRenderingModel(visitorContext, null));
+}
+</code></pre>
+<p>And we need a simple view file to render the variant we’ll create in Sitecore. The shell will be the same as the original view, but the content will be replaced with a loop for rendering the Variant Fields</p>
+<pre><code>&lt;div @Html.Sxa().Component(Model.Rendering.RenderingCssClass ?? &quot;cxa-productimages-component&quot;, Model.Attributes)&gt;
+    &lt;div class=&quot;component-content&quot;&gt;
+        @if (Model.Item != null)
+        {
+            foreach (BaseVariantField variantField in Model.VariantFields)
+            {
+                @Html.RenderingVariants().RenderVariant(variantField, Model.Item, Model.RenderingWebEditingParams, Model)
+            }
+        }
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2><a id="Putting_it_all_together_65"></a>Putting it all together</h2>
+<p>Now that we have the backend in place we need to wire it all up in Sitecore. For now we’ll just update the out of the box rendering. In practice I highly recommend creating your own version of the rendering through cloning to prevent updates from stepping on our work.</p>
+<p>First we need to update the <code>Controller</code> field on the Product Images rendering to our new controller. Then we need to include the <code>/sitecore/templates/Foundation/Experience Accelerator/Variants/Rendering Parameters/IComponentVariant</code> template to the Product Images Parameters template. This is needed to show the variants dropdown in the Experience Accelerator.</p>
+<p>Finally we need to create rendering variants in Sitecore so something actually renders to the page. You can use the original view file as a starting point. Below is an example I created with the default being the out of the box look and an alternate that excludes the thumbnails. What you do here is up to you.</p>
+<p><img src="files/ProductImagesVariants.jpg" alt=""></p>
+<p>This is just one way to go about this. The downside is that you’ll need to modify every rendering you want rendering variant functionality on. Reimplementing the base classes also makes upgrades more difficult if you want to include any new functionality. However rendering variants give the Commerce components the same flexibility that SXA components have. Although this isn’t an exhaustive look at how to integrate rendering variants into Commerce renderings, I hope it gives you a good starting point if you decide to implement this in the future.</p>
