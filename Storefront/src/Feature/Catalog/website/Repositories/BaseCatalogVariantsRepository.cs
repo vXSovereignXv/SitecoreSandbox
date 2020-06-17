@@ -104,7 +104,7 @@ namespace Sandbox.Feature.Catalog.Repositories
             {
                 Item productItem = currentCatalogItem;
                 itemRenderingModel = GetCatalogItemVariantsRenderingModel(visitorContext, productItem);
-                itemRenderingModel.Item = currentCatalogItem;
+                itemRenderingModel.Item = itemRenderingModel.DataSourceItem = itemRenderingModel.PageItem = currentCatalogItem;
             }
             else
             {

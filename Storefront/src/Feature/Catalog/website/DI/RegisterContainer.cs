@@ -8,7 +8,7 @@ namespace Sandbox.Feature.Catalog.DI
     {
         public void Configure(IServiceCollection serviceCollection)
         {
-            serviceCollection.AddSingleton<IProductImagesRepository, ProductImagesRepository>();
+            serviceCollection.AddScoped<IProductImagesRepository, ProductImagesRepository>();
         }
     }
 }
