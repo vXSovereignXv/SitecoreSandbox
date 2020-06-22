@@ -25,8 +25,8 @@ namespace Sandbox.Feature.Catalog.Repositories
     /// Reimplementation of Sitecore.Commerce.XA.Foundation.Common.Repositories.BaseCommerceModelRepository and
     /// Sitecore.Commerce.XA.Feature.Catalog.Repositories.BaseCatalogRepository to support variants
     /// 
-    /// *Replace all occurances of BaseCommerceRenderingModel with BaseCommerceVariantsRenderingModel
-    /// *Replace all occurances of CatalogItemVariantsRenderingModel with CatalogItemVariantsRenderingModel
+    /// *Replace all occurrences of BaseCommerceRenderingModel with BaseCommerceVariantsRenderingModel
+    /// *Replace all occurrences of CatalogItemRenderingModel with CatalogItemVariantsRenderingModel
     /// *Other changes from OOTB version marked with 'Important:' comment
     /// </summary>
     public class BaseCatalogVariantsRepository : VariantsRepository
