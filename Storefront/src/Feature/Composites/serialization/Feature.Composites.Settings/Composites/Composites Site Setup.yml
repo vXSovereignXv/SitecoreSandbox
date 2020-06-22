@@ -1,0 +1,26 @@
+﻿---
+ID: "ba768f17-82b6-47a4-93fc-bd516396494d"
+Parent: "5fffa7f2-fbcd-4e9d-ab90-b19d03c89f4d"
+Template: "292ccfcd-7790-4692-856b-76014b8038e7"
+Path: /sitecore/system/Settings/Feature/Sandbox Experience Accelerator/Composites/Composites Site Setup
+DB: master
+SharedFields:
+- ID: "40deee2f-7595-40bd-b2c9-51f9e2346100"
+  Hint: Dependencies
+  Type: Treelist
+  Value: "{BDF83718-907A-435B-B1BA-64139E07983F}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200622T181751Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "c202067e-7fab-4606-afb4-e76df2185ddc"
+      Hint: Name
+      Value: Sandbox Composites

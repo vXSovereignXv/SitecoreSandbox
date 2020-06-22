@@ -1,0 +1,25 @@
+﻿---
+ID: "9c4e0ba0-b3e8-4e5b-9abc-a4f72416fc9f"
+Parent: "27918836-92bc-4291-b129-5fd8b4b3948e"
+Template: "f90052a5-b4e6-4e6d-9812-1e1b88a6fcea"
+Path: "/sitecore/system/Settings/Rules/Definitions/Elements/Sandbox - Select Snippet/Select Snippet"
+DB: master
+SharedFields:
+- ID: "ff55d5a7-6d4b-4cd1-83e0-bac268073f66"
+  Hint: Type
+  Value: Sandbox.Feature.Composites.Rules.SelectSnippet,Sandbox.Feature.Composites
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200622T184500Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "eeb36a3b-40d9-4af5-862a-de257b84dca3"
+      Hint: Text
+      Value: "select [snippetid,SelectSnippet,,specified] snippet"

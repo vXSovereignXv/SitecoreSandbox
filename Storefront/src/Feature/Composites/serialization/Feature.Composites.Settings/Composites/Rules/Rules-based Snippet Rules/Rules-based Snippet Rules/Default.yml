@@ -1,0 +1,26 @@
+﻿---
+ID: "c44a7f87-a3b4-4e99-87bc-1ae7fdfc3ae5"
+Parent: "f5921457-dca1-4097-a425-0a99c9c29bd3"
+Template: "854ba861-63ea-4a0c-8c7b-541e9a7ec4c1"
+Path: "/sitecore/system/Settings/Feature/Sandbox Experience Accelerator/Composites/Rules/Rules-based Snippet Rules/Rules-based Snippet Rules/Default"
+DB: master
+SharedFields:
+- ID: "42f77151-098f-496a-94cf-590b7edeeabe"
+  Hint: Tags
+  Type: Multilist
+  Value: |
+    {7ADA27C2-E37C-4467-AC79-B91E22655C1B}
+    {B5BAE47B-7C89-46AE-A367-B3F5027E8D18}
+    {83E58187-D1E5-4FB8-953E-EE89816EC0B5}
+    {75A9275C-7975-4677-B197-14617DF58635}
+    {BBD6A192-1AB9-41B6-A012-A24BCFCF84B1}
+    {A569A264-3F21-49BB-B84C-210F6859DF0F}
+    {5A355A23-0148-48CB-9017-90A696EAF155}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200622T183208Z

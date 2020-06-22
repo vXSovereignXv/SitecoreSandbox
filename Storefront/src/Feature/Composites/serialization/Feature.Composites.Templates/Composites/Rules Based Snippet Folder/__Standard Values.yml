@@ -1,0 +1,25 @@
+﻿---
+ID: "a2203512-4208-4514-8764-616cb53d4002"
+Parent: "869337f7-a936-4461-af81-385d7ba5cf64"
+Template: "869337f7-a936-4461-af81-385d7ba5cf64"
+Path: /sitecore/templates/Feature/Sandbox Experience Accelerator/Composites/Rules Based Snippet Folder/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: |
+    {018D3494-C787-4474-8FED-7A786310346A}
+    {869337F7-A936-4461-AF81-385D7BA5CF64}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200622T182015Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin

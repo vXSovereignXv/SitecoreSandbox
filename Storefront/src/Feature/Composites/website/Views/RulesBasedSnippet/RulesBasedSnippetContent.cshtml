@@ -1,0 +1,16 @@
+﻿@* Generator: MvcHelper *@
+@using Sitecore.XA.Foundation.SitecoreExtensions.Extensions
+
+@model Sandbox.Feature.Composites.Models.RulesBasedSnippetRenderingModel
+
+@{
+    var contentBaseKey = "section-content";
+    var contentKey = string.Format("{0}-1-{1}", contentBaseKey, Model.Id);
+}
+
+<div class="snippet">
+    @using (Html.Sxa().BeginEditFrame(Model.CompositeItem.ID.ToString(), "Snippet", Model.IsControlEditable))
+    {
+        @Html.Sitecore().Placeholder(contentKey)
+    }
+</div>

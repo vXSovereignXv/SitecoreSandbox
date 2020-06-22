@@ -1,0 +1,19 @@
+﻿---
+ID: "883070d7-f809-412c-bf5b-e85fe18ae65a"
+Parent: "5fffa7f2-fbcd-4e9d-ab90-b19d03c89f4d"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/system/Settings/Feature/Sandbox Experience Accelerator/Composites/Rules
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{DDA66314-03F3-4C89-84A9-39DFFB235B06}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200622T182732Z

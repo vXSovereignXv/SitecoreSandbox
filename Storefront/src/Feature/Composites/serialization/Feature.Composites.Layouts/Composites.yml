@@ -1,0 +1,14 @@
+﻿---
+ID: "7dd4897c-7a16-4367-be3d-cbb6d72e8694"
+Parent: "fee93dbf-5ffe-49af-80f2-589648c8c5b1"
+Template: "93227c5d-4fef-474d-94c0-f252ec8e8219"
+Path: /sitecore/layout/Layouts/Feature/Sandbox Experience Accelerator/Composites
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200622T181751Z

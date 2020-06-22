@@ -51,6 +51,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommerceCommon", "CommerceC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox.Foundation.CommerceCommon", "src\Foundation\CommerceCommon\website\Sandbox.Foundation.CommerceCommon.csproj", "{97B94711-4ADA-4C8A-9B52-5E2ED54498D1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Composites", "Composites", "{12E3CA86-E12B-4850-B0E2-ECC2240A4E2C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox.Feature.Composites", "src\Feature\Composites\website\Sandbox.Feature.Composites.csproj", "{B9365375-6731-4A85-BF83-F282E6B34ED2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +97,10 @@ Global
 		{97B94711-4ADA-4C8A-9B52-5E2ED54498D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97B94711-4ADA-4C8A-9B52-5E2ED54498D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97B94711-4ADA-4C8A-9B52-5E2ED54498D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9365375-6731-4A85-BF83-F282E6B34ED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9365375-6731-4A85-BF83-F282E6B34ED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9365375-6731-4A85-BF83-F282E6B34ED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9365375-6731-4A85-BF83-F282E6B34ED2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +123,8 @@ Global
 		{D725D7FC-1C02-44AE-8658-4C1CECBF3753} = {46B85978-6F25-47B9-BA89-586CAF003A16}
 		{8D44FA85-73DE-4E0E-ADD0-5299140EB855} = {C3F57797-2D54-4626-B842-51F30272E972}
 		{97B94711-4ADA-4C8A-9B52-5E2ED54498D1} = {8D44FA85-73DE-4E0E-ADD0-5299140EB855}
+		{12E3CA86-E12B-4850-B0E2-ECC2240A4E2C} = {60DA3F20-DEED-4580-AE38-A296D76ADE79}
+		{B9365375-6731-4A85-BF83-F282E6B34ED2} = {12E3CA86-E12B-4850-B0E2-ECC2240A4E2C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {845F548C-FD53-4C61-AB7F-953C2225A13B}

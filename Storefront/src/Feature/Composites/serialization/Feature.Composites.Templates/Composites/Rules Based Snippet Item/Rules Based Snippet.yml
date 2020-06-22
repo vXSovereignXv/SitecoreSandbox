@@ -1,0 +1,14 @@
+﻿---
+ID: "d74ea2f5-d61c-4355-b3fa-fe0d569e55e2"
+Parent: "018d3494-c787-4474-8fed-7a786310346a"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/Sandbox Experience Accelerator/Composites/Rules Based Snippet Item/Rules Based Snippet
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20200622T182607Z
